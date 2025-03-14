@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Agregar Producto{% endblock %}
+
+{% block content %}
+<div class="auth-container">
+    <h2>➕ Agregar Nuevo Producto</h2>
+    <form method="POST">
+        <div class="form-group">
+            <input type="text" name="producto" placeholder="Nombre del Producto" required>
+        </div>
+        <div class="form-group">
+            <input type="number" name="cantidad" placeholder="Cantidad Inicial" min="0" required>
+        </div>
+        <div class="form-group">
+            <input type="number" name="minima" placeholder="Stock Mínimo" min="1" required>
+        </div>
+        <button type="submit">Guardar Producto</button>
+        <a href="{{ url_for('dashboard') }}" class="btn">Cancelar</a>
+    </form>
+</div>
+{% endblock %}
